@@ -30,11 +30,13 @@
 .block-heading{
     font-family: 'Times New Roman', Times, serif;
     font-size: 10px; 
-    padding: 5px 5px;   
+    padding: 5px 5px;  
+    text-align: center; 
 }
 
 .block-text{
     padding: 5px 5px; 
+    font-size: 40px;
 }
 
 
@@ -61,10 +63,6 @@
 
 }
 
-.block-text{
-    font-size: 40px;
-}
-
 .d-none{
     display: none;
 }
@@ -76,4 +74,12 @@
 .highlight-red{
     color: red;
     text-decoration: underline;
+}
+
+.restart-button{
+    margin: 15px auto;
+    background-color: #2C6965;
+    padding: 7px 10px;
+    display: block;
+    box-shadow: 5px 5px 5px black;
 }

@@ -11,6 +11,8 @@ let errorDisplay = document.querySelector('.error-disp');
 
 let accuracyDisplay = document.querySelector('.accuracy-disp');
 
+let button = document.querySelector('.restart-button')
+
 let errorCount = 0;
 
 let timer=60;
@@ -100,12 +102,6 @@ function calcAccuracy()
     return (correctCharCount/totalChar*100);
 }
 
-function highlightText()
-{
-    
-
-}
-
 const takeInput = function()
 {
     inputTextArea.addEventListener('keypress', ()=>{
@@ -157,6 +153,10 @@ const takeInput = function()
             // console.log(stringEntered);
         }   
     });
+}
+
+button.onclick = function(){
+    window.location.reload();
 }
 
 
