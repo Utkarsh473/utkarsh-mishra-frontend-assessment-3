@@ -19,6 +19,10 @@ let charIndexToBeChecked = 0;
 
 let stringEntered = '';
 
+let st = textToBeTyped.innerText;
+
+let highlightString = '';
+
 const displayTimer = function(){
     setInterval(reduceTime, 1000);
     timeDisplay.innerText = `${timer}s`;
@@ -98,11 +102,7 @@ function calcAccuracy()
 
 function highlightText()
 {
-    let substr = textToBeTyped.innerText[charIndexToBeChecked];
-
-    console.log(substr);
-
-    textToBeTyped.innerHTML = `<span class="highlight-green">${substr}</span>`;
+    
 
 }
 
@@ -124,9 +124,27 @@ const takeInput = function()
                /* inputTextArea.value = stringEntered;
                console.log(inputTextArea.value);*/
                errorCount++;
+
+                let c = st.charAt(charIndexToBeChecked -1);
+
+                highlightString+= `<span class="highlight-red">${c}</span>`;
+
+                console.log(highlightString);
+
+                textToBeTyped.innerHTML = `${highlightString}${st.substring(charIndexToBeChecked,st.length)}`;
             }
 
-            highlightText();
+            else{
+
+                let c = st.charAt(charIndexToBeChecked -1);
+
+                highlightString+= `<span class="highlight-green">${c}</span>`;
+
+                console.log(highlightString);
+
+                textToBeTyped.innerHTML = `${highlightString}${st.substring(charIndexToBeChecked,st.length)}`;
+
+            }
 
             showErrors();
 
